@@ -13,17 +13,6 @@ def xor_criptografar(mensagem, chave):
     
     return mensagem_criptografada
 
-def xor_descriptografar(mensagem_criptografada, chave):
-    mensagem_descriptografada = []
-    
-    for i in range(len(mensagem_criptografada)):
-        caractere_criptografado = chr(mensagem_criptografada[i])
-        caractere_chave = chave[i % len(chave)]  # A chave é repetida conforme necessário
-        resultado_xor = ord(caractere_criptografado) ^ ord(caractere_chave)
-        mensagem_descriptografada.append(chr(resultado_xor))
-    
-    return ''.join(mensagem_descriptografada)
-
 mensagem_criptografada = xor_criptografar(mensagem, chave)
 print("Mensagem criptografada:", mensagem_criptografada)
 
